@@ -78,7 +78,7 @@ class TIC_TAC_TOE
             }
             display();
 
-            if(turn%2==1)
+            
                 while(true)
                 {
                     System.out.println("\n"+name1+":where do you want to enter?");
@@ -109,44 +109,16 @@ class TIC_TAC_TOE
                         System.out.println("\nno one wins");break;
                     }
                 }
-            else
-                while(true)
-                {
-                    System.out.println("\n"+name2+":where do you want to enter?");
-                    int x = sc.nextInt();
-                    initialize(x,'X');
-                    display();
-                    if(check()==1)
-                    {
-                        System.out.println("\n"+name2+"(X) wins");c2++;break;
-                    }
-                    else if(check()==2)
-                    {
-                        System.out.println("\nno one wins");break;
-                    }
-                    System.out.println("\n"+name1+":where do you want to enter?");
-                    int y = sc.nextInt();
-                    initialize(y,'O');
-                    display();
-                    if(check()==1)
-                    {
-
-                        System.out.println("\n"+name1+"(0) wins");c1++;
-                        break;
-
-                    }
-                    else if(check()==2)
-                    {
-                        System.out.println("\nno one wins");break;
-                    }
-                }
+            
             System.out.println("\n\nWanna play again ? :D !!!!!!!!!!");
             String chc  = sc.next();
             chc = chc.toLowerCase();
             if(chc.equals("yes")||chc.equals("yeah")||chc.equals("ha")||chc.equals("yup")||chc.equals("yeai")||chc.equals("y")||chc.startsWith("y")||chc.startsWith("h"))
 
             {
-                turn++;
+                turn++; String temp  = name2;
+                name2 = name1;
+                name1 = temp;
                 continue;
             }
             else
