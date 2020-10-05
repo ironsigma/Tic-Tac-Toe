@@ -36,6 +36,18 @@ class TIC_TAC_TOE
         }
     }
 
+    void resetBoard() {
+        char i1 = '1';
+        for(int i = 0;i<3;i++)
+        {
+            for(int j = 0;j<3;j++)
+            {
+                ch[i][j] = (char)i1;
+                i1++;
+            }
+        }
+    }
+
     void input()
     {
         int c1=0,c2=0;
@@ -67,15 +79,7 @@ class TIC_TAC_TOE
         }
         while(true)
         {
-            char i1 = '1';
-            for(int i = 0;i<3;i++)
-            {
-                for(int j = 0;j<3;j++)
-                {
-                    ch[i][j] = (char)i1;
-                    i1++;
-                }
-            }
+            resetBoard();
             display();
 
             
